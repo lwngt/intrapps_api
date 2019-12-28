@@ -33,11 +33,7 @@ services:
     expose: # Open port settting (Debug)
       - "3001"
       - "9228"
-    command: [
-        sh,
-        -c,
-        npm install && npm run debug && ./tools/docker_create_network.sh,
-      ] # Command after working
+    command: [sh, -c, npm install && npm run debug] # Command after working
     networks:
       - intrapps_network
 
