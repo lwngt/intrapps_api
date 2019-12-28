@@ -1,0 +1,71 @@
+version: "3"
+volumes:
+  unmount:
+services:
+  # Node.js
+  api-app:
+    build:
+      context: ./ # Dockerfile path
+      dockerfile: ./docker/construct_app/Dockerfile # Dockerfile name
+    image: intrapps_api_image:0.5.1 # image name
+    container_name: intrapps_api_container # container name
+    ports: # Port in this application(host:container)
+      - "3001:3001"
+      - "9228:9228"
+    environment: # Environment variable
+      - PORT=3001
+    volumes: # Mount resource directory in the host
+      - ./app/src:/work
+      - ./app/logs:/work/logs
+      - ./app/src/public/files/apk:/work/public/files/apk
+      - ./app/src/public/files/ipa:/work/public/files/ipa
+      - ./app/src/public/files/app_temp:/work/public/files/app_temp
+      - ./app/src/public/files/plist:/work/public/files/plist
+      - ./app/src/public/images/icon:/work/public/images/icon
+      - ./app/src/public/images/screenshot:/work/public/images/screenshot
+      - ./app/src/api_conf:/work/api_conf
+      - ./app/src/db_conf:/work/db_conf
+      - ./app/src/mail_conf:/work/mail_conf
+      - ./app/src/migrations:/work/migrations
+      - ./app/src/migrations/sqls:/work/migrations/sqls
+      - ./app/src/plist_template:/work/plist_template
+      - unmount:/work/node_modules
+    expose: # Open port settting (Debug)
+      - "3001"
+      - "9228"
+    command: [
+        sh,
+        -c,
+        npm install && npm run debug && ./tools/docker_create_network.sh,
+      ] # Command after working
+    networks:
+      - intrapps_network
+
+  # Nginx
+  nginx-api-proxy:
+    build:
+      context: ./
+      dockerfile: ./docker/construct_web/Dockerfile # Dockerfile name
+    image: intrapps_api_nginx_image:0.1 # image name
+    container_name: intrapps_api_nginx_container # container name
+    ports: # Port in this application(host:container)
+      - 8181:8181
+    volumes: # Mount resource directory in the host
+      - ./app/nginx:/etc/ssl/certs
+      - ./app/nginx:/etc/nginx/conf.d/
+      - ./app/src/public/files:/var/www/html/files
+      - ./app/src/public/files/ipa:/var/www/html/files/ipa
+      - ./app/src/public/files/plist:/var/www/html/files/plist
+      - ./app/src/public/files/apk:/var/www/html/files/apk
+      - ./app/src/public/images:/var/www/html/images
+      - ./app/src/public/images/screenshot:/var/www/html/images/screenshot
+      - ./app/src/public/images/icon:/var/www/html/images/icon
+    links:
+      - "api-app"
+    expose: # Open port settting
+      - "8181"
+    networks:
+      - intrapps_network
+networks:
+  intrapps_network:
+    external: true

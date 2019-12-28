@@ -1,0 +1,6 @@
+{
+  "stmp_server": "smtp.gmail.com",
+  "stmp_user_id": "xxxxxxxxxx",
+  "stmp_password": "xxxxxxxxxx",
+  "from_mail_address": "xxxxxxxxxx"
+}
