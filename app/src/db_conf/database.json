@@ -1,9 +1,0 @@
-{
-    "dev": {
-        "driver": "mysql",
-        "user": "user",
-        "password": "password",
-        "database": "app",
-        "host": "intrapps_db_container"
-    }
-}
