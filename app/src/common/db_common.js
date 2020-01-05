@@ -1761,7 +1761,7 @@ class Db_Common {
     if (json === null || json === undefined) {
       // Connect database
       try {
-        db_connect_define = JSON.parse(fs.readFileSync('/work/db_conf/mysql.conf', 'utf8'));
+        db_connect_define = JSON.parse(fs.readFileSync('/work/db_conf/mysql.json', 'utf8'));
       } catch (error) {
         callback(error, null, null);
       }
