@@ -1654,15 +1654,13 @@ class Db_Common {
       return null;
     }
 
-    return " SELECT b.id "
-      + "          ,b.name"
-      + "      FROM vendors a "
-      + "          ,users b "
-      + "     WHERE a.unregisted is null "
-      + "       AND a.id = " + vendor_id + " "
-      + "       AND b.authority_type = 0 "
-      + "       AND b.verified = 1 "
-      + "       AND b.unregisted is null ";
+    return "SELECT a.id "
+      + "      ,a.name "
+      + "  FROM users a "
+      + " WHERE a.unregisted is null "
+      + "   AND a.vendor_id = " + vendor_id + " "
+      + "   AND a.authority_type = 0 "
+      + "   AND a.verified = 1 ";
   }
 
   // Function : create_vendor_update_sql
