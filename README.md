@@ -7,6 +7,10 @@
 
 ## What is Intrapps
 
+<p align="center">
+<img src="https://www.intrapps.com/assets/img/overview.png">
+</p>
+
 Server application to delivery mobile app for smart phone.<br>
 You can distribute iOS/Android app via browser and you can delivery them without using AppStore and Google Play Store to do it.<br>
 You don't need install special app to delivery and ask ID like Apple ID and Google ID to your colleagues.<br>
@@ -39,7 +43,3 @@ You can use investigate and modify these api.
 Intrapps<br>
 Copyright (c) 2020 [Lichtwork.com](https://www.lichtwork.com)<br>
 Apache License 2.0
-
-## UI framework
-
-[Paper Dashboard 2 PRO from Creative Tim](https://www.creative-tim.com/product/paper-dashboard-2-pro)
