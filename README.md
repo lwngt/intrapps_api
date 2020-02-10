@@ -22,7 +22,7 @@ You can use investigate and modify these api.
 
 ## How to debug of API
 
-[Click here for detailed debug of API](http://www.intrapps.com/spec/how-to-debug.html)
+[Click here for detailed debug of API](http://www.intrapps.com/spec/how-to-debug.html#api)
 
 ## API spec ( Sorry for almost api is WIP ! )
 
@@ -31,8 +31,8 @@ You can use investigate and modify these api.
 ## Other repogitory
 
 - [Intrapps software](https://github.com/lwngt/intrapps)
-- [API's source code](https://github.com/lwngt/intrapps_api)
-- [Database's source code](https://github.com/lwngt/intrapps_api)
+- [Web app's source code](https://github.com/lwngt/intrapps_web)
+- [Database's source code](https://github.com/lwngt/intrapps_db)
 
 ## Licence
 
