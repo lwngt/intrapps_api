@@ -31,7 +31,7 @@ You can use investigate and modify these api.
 ## Other repogitory
 
 - [Intrapps software](https://github.com/lwngt/intrapps)
-- [Web app's source code](https://github.com/lwngt/intrapps_web)
+- [Web's source code](https://github.com/lwngt/intrapps_web)
 - [Database's source code](https://github.com/lwngt/intrapps_db)
 
 ## Licence
