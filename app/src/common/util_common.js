@@ -93,10 +93,10 @@ class Util_Common {
       "upload_date": building.upload_date,
       "project": {
         "id": building.project_id,
-        "name": building.project_name,
-        "icon": building.build_icon
+        "name": building.project_name
       },
       "application": {
+        "icon": building.build_icon,
         "title": building.title,
         "bundle_id": building.bundle_id,
         "last_and_first_name": building.last_and_first_name,
@@ -248,10 +248,10 @@ class Util_Common {
           "upload_date": latest.upload_date,
           "project": {
             "id": latest.project_id,
-            "name": latest.project_name,
-            "icon": latest.build_icon
+            "name": latest.project_name
           },
           "application": {
+            "icon": latest.build_icon,
             "title": latest.title,
             "bundle_id": latest.bundle_id,
             "last_and_first_name": latest.last_and_first_name,
