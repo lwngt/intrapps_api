@@ -26,11 +26,11 @@ You can use investigate and modify these api.
 
 ## How to debug of API
 
-[Click here for detailed debug of API](http://www.intrapps.com/spec/how-to-debug.html#api)
+[Click here for detailed debug of API](https://www.intrapps.com/spec/how-to-debug.html#api)
 
-## API spec ( Sorry for almost api is WIP ! )
+## API spec
 
-[Click here for detailed API spec](http://www.intrapps.com/spec/intrapps_api.html)
+[Click here for detailed API spec](https://www.intrapps.com/spec/intrapps_api.html)
 
 ## Other repogitory
 
@@ -43,3 +43,7 @@ You can use investigate and modify these api.
 Intrapps<br>
 Copyright (c) 2020 [Lichtwork.com](https://www.lichtwork.com)<br>
 Apache License 2.0
+
+## Story
+
+[here](https://www.intrapps.com/story.html)
