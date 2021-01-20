@@ -139,7 +139,7 @@ async function run_process_all(argument_content, res) {
     let result = await execute_sql(user_check_sql);
     if (Number(result[0].count_user) > 0) {
       // the user has already existed
-      let response = api_common_func.response_400_0444();
+      let response = api_common_func.response_400_0413();
       api_common_func.response_object(res, 400, response, result, LOG_FILE_NAME);
       return;
     }

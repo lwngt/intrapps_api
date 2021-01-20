@@ -9,7 +9,7 @@
       "address": "localhost",
       "localRoot": "${workspaceFolder}/app/src",
       "remoteRoot": "/work",
-      "protocol": "inspector",
+      "protocol": "inspector"
     }
   ]
 }

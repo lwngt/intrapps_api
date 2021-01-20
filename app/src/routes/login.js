@@ -61,7 +61,7 @@ async function run_process_all(argument_content, res) {
       argument_content.data.username, argument_content.data.password);
     result = await execute_sql(auth_sql);
     if (result === null) {
-      let response = api_common_func.response_400_0417();
+      let response = api_common_func.response_400_0004();
       api_common_func.response_object(res, 400, response, null, LOG_FILE_NAME);
       return;
     }
