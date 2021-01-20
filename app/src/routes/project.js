@@ -137,7 +137,7 @@ async function run_process_all(apikey, secretkey, argument_content, res) {
         vendor_id, user_id, argument_content.data.project_id);
     result = await execute_sql(project_sql);
     if (result === null) {
-      let response = api_common_func.response_400_0443();
+      let response = api_common_func.response_400_0423();
       api_common_func.response_object(res, 400, response, null, LOG_FILE_NAME);
       return;
     }

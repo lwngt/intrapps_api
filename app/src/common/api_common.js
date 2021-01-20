@@ -26,11 +26,6 @@ const response =
     },
     {
       "status": 400,
-      "code": "0006",
-      "message": "fail to authenticate."
-    },
-    {
-      "status": 400,
       "code": "0008",
       "message": "fail to manage the file."
     },
@@ -126,18 +121,8 @@ const response =
     },
     {
       "status": 400,
-      "code": "0415",
-      "message": "signup confirm is failed. code has already been verified or code is wrong."
-    },
-    {
-      "status": 400,
       "code": "0416",
       "message": "This code was expired. Please register again."
-    },
-    {
-      "status": 400,
-      "code": "0417",
-      "message": "the login failed"
     },
     {
       "status": 401,
@@ -261,16 +246,6 @@ const response =
     },
     {
       "status": 400,
-      "code": "0443",
-      "message": "project id argument error."
-    },
-    {
-      "status": 400,
-      "code": "0444",
-      "message": "The user has already existed"
-    },
-    {
-      "status": 400,
       "code": "0445",
       "message": "Can\'t send email"
     },
@@ -344,14 +319,6 @@ class Api_Common {
   // memo     : search json meet condition
   response_401_0005() {
     return search_response_and_code(401, "0005");
-  }
-
-  // Function : response_400_0006
-  // Argument : none
-  // response : HTTP:400 & CODE:0006 json
-  // memo     : search json meet condition
-  response_400_0006() {
-    return search_response_and_code(400, "0006");
   }
 
   // Function : response_400_0008
@@ -514,30 +481,12 @@ class Api_Common {
     return search_response_and_code(401, "0414");
   }
 
-
-  // Function : response_400_0415
-  // Argument : none
-  // response : HTTP:400 & CODE:0415 json
-  // memo     : search json meet condition
-  response_400_0415() {
-    return search_response_and_code(400, "0415");
-  }
-
-
   // Function : response_400_0416
   // Argument : none
   // response : HTTP:400 & CODE:0416 json
   // memo     : search json meet condition
   response_400_0416() {
     return search_response_and_code(400, "0416");
-  }
-
-  // Function : response_400_0417
-  // Argument : none
-  // response : HTTP:400 & CODE:0417 json
-  // memo     : search json meet condition
-  response_400_0417() {
-    return search_response_and_code(400, "0417");
   }
 
   // Function : response_401_0418
@@ -749,22 +698,6 @@ class Api_Common {
     return search_response_and_code(400, "0804");
   }
 
-  // Function : response_400_0443
-  // Argument : none
-  // response : HTTP:400 & CODE:0443 json
-  // memo     : search json meet condition
-  response_400_0443() {
-    return search_response_and_code(400, "0443");
-  }
-
-  // Function : response_400_0444
-  // Argument : none
-  // response : HTTP:400 & CODE:0444 json
-  // memo     : search json meet condition
-  response_400_0444() {
-    return search_response_and_code(400, "0444");
-  }
-
   // Function : response_400_0445
   // Argument : none
   // response : HTTP:400 & CODE:0445 json
@@ -799,7 +732,7 @@ class Api_Common {
 
   // Function : response_400_9999
   // Argument : none
-  // response : HTTP:400 & CODE:0444 json
+  // response : HTTP:400 & CODE:9999 json
   // memo     : search json meet condition
   response_400_9999() {
     return search_response_and_code(400, "9999");
