@@ -21,7 +21,7 @@ let path = require('path');
 var express = require('express');
 var router = express.Router();
 var multer = require('multer');
-const uuidv4 = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 const util = require('util');
 const PkgReader = require('reiko-parser');
 
