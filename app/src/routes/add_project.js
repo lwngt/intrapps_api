@@ -19,7 +19,7 @@ let express = require('express');
 let router = express.Router();
 let moment = require("moment");
 let multer = require('multer');
-let uuidv4 = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 
 let timestamp = moment().unix(); // unix time stamp
 let uuid = uuidv4().split('-').join(''); // uuid

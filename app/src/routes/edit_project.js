@@ -19,7 +19,7 @@ let express = require('express');
 let router = express.Router();
 let moment = require("moment");
 let multer = require('multer');
-let uuidv4 = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 
 var modify_type = {
   KEEP: 0,
