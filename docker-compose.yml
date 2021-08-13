@@ -42,7 +42,7 @@ services:
     build:
       context: ./
       dockerfile: ./docker/construct_web/Dockerfile # Dockerfile name
-    image: intrapps_api_nginx_image:0.1 # image name
+    image: intrapps_api_nginx_image:0.2 # image name
     container_name: intrapps_api_nginx_container # container name
     ports: # Port in this application(host:container)
       - 8181:8181
