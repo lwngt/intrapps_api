@@ -7,13 +7,18 @@ services:
     build:
       context: ./ # Dockerfile path
       dockerfile: ./docker/construct_app/Dockerfile # Dockerfile name
-    image: intrapps_api_image:0.5.10-rel # image name
+    image: intrapps_api_image:0.5.11-rel # image name
     container_name: intrapps_api_container # container name
-    ports: # Port in this application(host:container)
+    ports:
+      # Port in this application(host:container)
       - "3001:3001"
-    environment: # Environment variable
+      - "9228:9228"
+    environment:
+      # Environment variable
       - PORT=3001
-    volumes: # Mount resource directory in the host
+    volumes:
+      # Mount resource directory in the host
+      - ./app/src:/work
       - ./app/logs:/work/logs
       - ./app/src/public/files/apk:/work/public/files/apk
       - ./app/src/public/files/ipa:/work/public/files/ipa
@@ -28,9 +33,11 @@ services:
       - ./app/src/migrations/sqls:/work/migrations/sqls
       - ./app/src/plist_template:/work/plist_template
       - unmount:/work/node_modules
-    expose: # Open port settting
+    expose:
+      # Open port settting (Debug)
       - "3001"
-    command: [sh, -c, npm install && npm start] # Command after working
+      - "9228"
+    command: [ sh, -c, npm install && npm run debug ]
     networks:
       - intrapps_network
 
@@ -39,11 +46,13 @@ services:
     build:
       context: ./
       dockerfile: ./docker/construct_web/Dockerfile # Dockerfile name
-    image: intrapps_api_nginx_image:0.2-rel # image name
+    image: intrapps_api_nginx_image:0.3-rel # image name
     container_name: intrapps_api_nginx_container # container name
-    ports: # Port in this application(host:container)
+    ports:
+      # Port in this application(host:container)
       - 8181:8181
-    volumes: # Mount resource directory in the host
+    volumes:
+      # Mount resource directory in the host
       - ./app/nginx:/etc/ssl/certs
       - ./app/nginx:/etc/nginx/conf.d/
       - ./app/src/public/files:/var/www/html/files
@@ -55,7 +64,8 @@ services:
       - ./app/src/public/images/icon:/var/www/html/images/icon
     links:
       - "api-app"
-    expose: # Open port settting
+    expose:
+      # Open port settting
       - "8181"
     networks:
       - intrapps_network
